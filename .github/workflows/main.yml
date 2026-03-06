@@ -18,7 +18,7 @@ jobs:
     
     - name: Copy artifact
       run: | 
-        mkdir dist/third-sanctuarii-gc/bin
+        mkdir -p dist/third-sanctuarii-gc/bin
         cp third-sanctuarii-gc.dol dist/third-sanctuarii-gc/bin/third-sanctuarii-gc.dol
 
     - name: Upload artifacts
