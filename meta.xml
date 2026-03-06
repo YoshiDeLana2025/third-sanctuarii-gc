@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+	<name>Third Sanctuarii</name>
+	<version>1.0.0</version>
+	<release_date>20260204000000</release_date>
+	<coder>NorthWestWind</coder>
+	<short_description>Third Sanctuary but your Wii actually crashed</short_description>
+	<long_description>Third Sanctuary but your actual Wii crashed.  
+"Suggested" by bingus5488 under "Third Sanctuary but your Wii crashed".
+
+- Plays audio from "Third Sanctuary but your Wii crashed"
+- Renders image of Wii in Deltarune prophecy style
+- Actually crashes your Wii
+
+Press any button to get started.  
+Press HOME to quit the app before your Wii crashes.
+</long_description>
+</app>
