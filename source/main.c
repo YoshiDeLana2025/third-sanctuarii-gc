@@ -59,7 +59,7 @@ int main(int argc, char** argv) {
 		last = gettime();
 
 		PAD_ScanPads();
-		u32 pressed = PAD_ButtonsDown(PAD_CHAN_0);
+		u32 pressed = PAD_ButtonsDown(PAD_CHAN0);
 		if (pressed & PAD_BUTTON_START) exit(0);
 
 		if (phase == 0) {
@@ -119,3 +119,4 @@ int main(int argc, char** argv) {
 
 	return 0;
 }
+
