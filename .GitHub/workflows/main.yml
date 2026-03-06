@@ -1,0 +1,29 @@
+name: Build
+
+on: workflow_dispatch
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitppc:latest
+ 
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        submodules: true
+
+    - name: Build
+      run: |
+        make
+    
+    - name: Copy artifact
+      run: | 
+        mkdir dist/third-sanctuarii-gc/bin
+        cp third-sanctuarii-gc.dol dist/third-sanctuarii-gc/bin/third-sanctuarii-gc.dol
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
+      with: 
+        name: third-sanctuarii-gc
+        path: |
+         dist/third-sanctuarii-gc/
