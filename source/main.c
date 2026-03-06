@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <gccore.h>
-#include <wiiuse/wpad.h>
+#include <ogc/pad.h>
 #include <asndlib.h>
 #include <mp3player.h>
 #include <ogc/lwp_watchdog.h>
@@ -26,7 +26,7 @@ void crash() {
 
 int main(int argc, char** argv) {
 	VIDEO_Init();
-	WPAD_Init();
+	PAD_Init();
 
 	ASND_Init();
 	MP3Player_Init();
@@ -53,13 +53,14 @@ int main(int argc, char** argv) {
 	int off_x = (rmode->fbWidth - 293) / 2, off_y = (rmode->xfbHeight - 313) / 2 + 20;
 	int off_y_prophecy = rmode->xfbHeight / 10;
 	Canvas_Clear(canvas);
+	
 	while (SYS_MainLoop()) {
 		elapsed = diff_msec(last, gettime());
 		last = gettime();
 
-		WPAD_ScanPads();
-		u32 pressed = WPAD_ButtonsDown(0);
-		if (pressed & WPAD_BUTTON_HOME) exit(0);
+		PAD_ScanPads();
+		u32 pressed = PAD_ButtonsDown(PAD_CHAN_0);
+		if (pressed & PAD_BUTTON_START) exit(0);
 
 		if (phase == 0) {
 			if (pressed) {
@@ -107,14 +108,14 @@ int main(int argc, char** argv) {
 				// this is for dolphin
 				//exit(0);
 			} else wait -= elapsed;
+			}
+
+			Canvas_Render(canvas);
+			Canvas_Swap(canvas);
+			VIDEO_Flush();
+
+			VIDEO_WaitVSync();
 		}
-
-		Canvas_Render(canvas);
-		Canvas_Swap(canvas);
-		VIDEO_Flush();
-
-		VIDEO_WaitVSync();
-	}
 
 	return 0;
 }
