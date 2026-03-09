@@ -1,11 +1,17 @@
-# Third Sanctuarii
+# Third Sanctuarii GC
+
+Third Sanctuary but your actual GameCube crashed.
+
+Original Wii version by NorthWestWind, backported to GameCube by YoshiDeLana2025 [(Link to original Wii version source code)](https://codeberg.org/NorthWestWind/third-sanctuarii)
+
+## Third Sanctuarii 
 
 Third Sanctuary but your actual Wii crashed.  
 "Suggested" by bingus5488 under "Third Sanctuary but your Wii crashed". [(Take a listen!)](https://www.youtube.com/watch?v=KZVGO7VLX_0)
 
 ![YouTube Comment: Imagine if you install a homebrew app and this starts playing after your Wii crashes](comment.png)
 
-## Feature
+### Feature
 - Plays audio from "Third Sanctuary but your Wii crashed"
 - Renders image of Wii in Deltarune prophecy style
 - Actually crashes your Wii
@@ -13,7 +19,7 @@ Third Sanctuary but your actual Wii crashed.
 Press any button to get started.  
 Press HOME to quit the app before your Wii crashes.
 
-## Performance
+### Performance
 This Homebrew app is a joke, and is NOT OPTIMIZED in the slightest.
 I didn't actually bother to learn how to use the GX system.
 Everything is rendered with a single thread writing directly into the frame buffer.
